@@ -102,12 +102,10 @@ function submitMyform(postData){
 				jQuery("#myform").html(data.res);
 	
 		},
-		error: function(){
-				
-					jQuery("#myform").html('error').show();
-
-
-		}
+		error:  function(xhr, status, error) {
+  var err = eval("(" + xhr.responseText + ")");
+  alert(err.Message);
+}
 	});
 
 
