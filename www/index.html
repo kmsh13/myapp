@@ -67,8 +67,8 @@
       <textarea type="text" name="comments" id="comments" value=""></textarea>
     </div>
     <div data-role="fieldcontain">
-      <label for="switch-c">I should run this app ?:</label>
-      <select name="switch-c" id="switch-c" data-role="slider">
+      <label for="rating">I should run this app ?:</label>
+      <select name="rating" id="rating" data-role="slider">
         <option value="0">No!</option>
         <option value="1">Yes!</option>
       </select>
@@ -85,28 +85,28 @@
 <!-- /page -->
 <script type="text/javascript">
 jQuery('#mysubmit').click(function(){
-	jQuery("#myform").hide(function(){
-		jQuery('.ui-loader').show();
-	});
-		 
+	
 	var myFormData = jQuery("#myform").find("select, textarea, input").serialize();
 	submitMyform(myFormData)
 	console.log(myFormData);
 });
 function submitMyform(postData){
 	jQuery.ajax({
-		type: 'POST',
+	
+	type: 'POST',
 		data: postData,
+		dataType: "json",
 		url: 'http://dev.quickheal.com/qgs/app.php',
 		success: function(data){
-				jQuery("ui-loader").hide(function(){
-						jQuery("#myform").html(data.res).show();
-				});
+	          console.log(data.res);
+				jQuery("#myform").html(data.res);
+	
 		},
 		error: function(){
-			jQuery("ui-loader").hide(function(){
-						jQuery("#myform").html('Unable to load').show();
-				});
+				
+					jQuery("#myform").html('error').show();
+
+
 		}
 	});
 
