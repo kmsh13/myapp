@@ -16,11 +16,6 @@
         Kamesh Jungi
     </author>
 
-    <!--
-        If you do not want any permissions to be added to your app, add the
-        following tag to your config.xml; you will still have the INTERNET
-        permission on your app, which PhoneGap requires.
-    -->
    <preference name = "permissions" value = "none"/>
    
    <icon src = "res/icon/android/drawable-ldpi/tp_icon.png" 
@@ -43,9 +38,4 @@
    <icon src = "res/icon/ios/icon-72.png" gap:platform = "ios" width = "72" height = "72" />
    <icon src = "res/icon/ios/icon-57-2x.png" gap:platform = "ios" width = "114" height = "114" />
    <icon src = "res/icon/ios/icon-72-2x.png" gap:platform = "ios" width = "144" height = "144" />
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-
 </widget>
