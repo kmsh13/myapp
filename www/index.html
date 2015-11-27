@@ -96,6 +96,7 @@ function submitMyform(postData){
 	type: 'POST',
 		data: postData,
 		dataType: "json",
+		crossDomain: true,
 		url: 'http://dev.quickheal.com/qgs/app.php',
 		success: function(data){
 	          console.log(data.res);
